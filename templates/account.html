@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Account · IPL 2027 Auction Game{% endblock %}
+{% block content %}
+<div class="container login-wrap">
+  <div class="card shadow-sm login-card">
+    <div class="card-body p-4">
+      <h4 class="mb-1">Change password</h4>
+      <p class="text-muted small mb-3">Signed in as <b>@{{ user.username }}</b>. Changing your password signs you out on other devices.</p>
+      <form id="pwForm" autocomplete="off">
+        <input type="text" name="username" value="{{ user.username }}" autocomplete="username" hidden>
+        <input class="form-control mb-2" id="cur" type="password" placeholder="Current password" required autocomplete="current-password">
+        <input class="form-control mb-2" id="new1" type="password" placeholder="New password (min 8)" required minlength="8" maxlength="128" autocomplete="new-password">
+        <input class="form-control mb-3" id="new2" type="password" placeholder="Confirm new password" required minlength="8" maxlength="128" autocomplete="new-password">
+        <button class="btn btn-primary w-100" id="pwBtn">Update password</button>
+      </form>
+      <div class="row-msg mt-2" id="pwMsg"></div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}<script src="{{ asset('account.js') }}"></script>{% endblock %}

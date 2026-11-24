@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Leaderboard · IPL 2027 Auction Game{% endblock %}
+{% block content %}
+<div class="container py-3">
+  <div class="d-flex justify-content-between align-items-center mb-2">
+    <h4 class="m-0">Leaderboard</h4>
+    <small class="text-muted" id="updated"></small>
+  </div>
+  <div id="locked" class="alert alert-info d-none">The leaderboard goes live once the admin locks betting and the auction starts.</div>
+  <div class="table-responsive">
+    <table class="table table-hover align-middle shadow-sm" id="board">
+      <thead class="thead-dark"><tr><th>#</th><th>Player</th><th class="text-end">Points</th><th class="text-end">Exact Team Hits</th><th class="text-end">Exact Price Hits</th><th class="text-end">Players Scored</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}<script src="{{ asset('leaderboard.js') }}"></script>{% endblock %}
